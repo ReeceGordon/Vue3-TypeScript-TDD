@@ -1,16 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+<section class="section">
+  <div class="container">
+    <Suspense>
+      <template #default>
+        <Timeline />
+      </template>
+      <template #fallback>
+        <Spinner />
+      </template>
+    </Suspense>
+  </div>
+</section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import Timeline from './components/Timeline.vue';
+import Spinner from './components/Spinner.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    Timeline,
+    Spinner
   }
 });
 </script>

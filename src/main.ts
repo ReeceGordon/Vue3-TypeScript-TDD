@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import {today, thisWeek, thisMonth, Post} from './mocks'
+import { router } from './router'
+import 'highlight.js/styles/atom-one-dark.css'
 
 
 function delay() {
@@ -21,4 +23,7 @@ function delay() {
       }
   }
 
-createApp(App).mount('#app')
+const app = createApp(App)
+// plugins here
+app.use(router)
+app.mount('#app')

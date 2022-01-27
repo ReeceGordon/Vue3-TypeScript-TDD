@@ -50,7 +50,7 @@ describe('Timeline', () => {
 
     // Resolves vue internal promises, such as Reactivity system
     await nextTick()
-    // It is very common to require a nextTime after a wrapper.get.trigger so trigger actually returns
+    // It is very common to require a nextTick after a wrapper.get.trigger so trigger actually returns
     // nextTick making the following one liner possible to perform the same:
     // await wrapper.get('[data-test="This Week"').trigger('click')
 

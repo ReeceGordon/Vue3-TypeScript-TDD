@@ -37,6 +37,13 @@ class Store {
         }
         this.state.posts = postsState
     }
+
+    async createPost(post: Post) {
+        const response = await axios.post<Post>('/posts', post)
+        this.state.posts.all.set(post.id, response.data)
+        this.state.posts.ids.push(post.id)
+        console.log(response)
+    }
 }
 
 const all = new Map<string, Post>()

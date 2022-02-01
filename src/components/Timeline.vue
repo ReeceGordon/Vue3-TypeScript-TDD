@@ -67,7 +67,6 @@ export default defineComponent({
            return post.created.isAfter(moment().subtract(1, 'month'))
          }
          
-
          return false
        })
       })
